@@ -13,15 +13,10 @@ namespace UnitTest1
 		
 		TEST_METHOD(TestMethod1)
 		{
-			double expected = 0.0;
-			int N = 6;
-			for (int i = N; i <= 20; i++) {
-				expected += (cos(i) + sin(i)) / (1 + cos(i) * sin(i));
-			}
-			Assert::AreEqual(expected, S1(6, 6), 0.0001);
-			Assert::AreEqual(expected, S2(6, 20), 0.0001);
-			Assert::AreEqual(expected, S3(6, 6, 0.0), 0.0001);
-			Assert::AreEqual(expected, S4(6, 20, 0.0), 0.0001);
+			Assert::AreEqual(S0(N), S1(N, 1), 0.0001);
+			Assert::AreEqual(S0(N), S2(N, N), 0.0001);
+			Assert::AreEqual(S0(N), S3(N, 1, 0.0), 0.0001);
+			Assert::AreEqual(S0(N), S4(N, N, 0.0), 0.0001);
 		}
 	};
 }
